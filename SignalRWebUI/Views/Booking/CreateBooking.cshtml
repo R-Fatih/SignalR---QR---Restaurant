@@ -1,0 +1,56 @@
+﻿@{
+	ViewData["Title"] = "CreateBooking";
+	Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+@model SignalRWebUI.Dtos.BookingDtos.CreateBookingDto
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Rezervasyon İşlemleri</h4>
+		<div class="row">
+			<div class="col-md-12">
+
+				<form method="post">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Yeni rezervasyon ekleme</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="categoryname">Adı soyadı</label>
+								<input type="text" class="form-control" asp-for="Name" id="categoryname" placeholder="Adı">
+							</div>
+							</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="tt">Telefon</label>
+								<input type="text" class="form-control" asp-for="Phone" id="tt" placeholder="Adı">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="ma">Mail</label>
+								<input type="email" class="form-control" asp-for="Mail" id="ma" placeholder="Adı">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="pc">Kişi sayısı</label>
+								<input type="number" class="form-control" asp-for="PersonCount" id="pc" placeholder="Adı">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="date">Tarih</label>
+								<input type="date" class="form-control" asp-for="Date" id="date" placeholder="Adı">
+							</div>
+						</div>
+							<div class="card-action">
+								<button class="btn btn-primary">Kaydet</button>
+
+							</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

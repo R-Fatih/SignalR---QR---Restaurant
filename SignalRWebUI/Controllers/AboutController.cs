@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using SignalRWebUI.Dtos.AboutDtos;
 using System.Text;
 
 namespace SignalRWebUI.Controllers
@@ -33,7 +34,7 @@ namespace SignalRWebUI.Controllers
 		[HttpPost]
 		public async Task<IActionResult> CreateAbout(CreateAboutDto createAboutDto)
 		{
-			createAboutDto.AboutStatus = true;
+
 			var client = _httpClientFactory.CreateClient();
 			var jsonData = JsonConvert.SerializeObject(createAboutDto);
 			StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");

@@ -1,0 +1,54 @@
+﻿@{
+	ViewData["Title"] = "UpdateProduct";
+	Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+@model SignalRWebUI.Dtos.ProductDtos.UpdateProductDto
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Kategori İşlemleri</h4>
+		<div class="row">
+			<div class="col-md-12">
+
+				<form method="post">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Ürün güncelleme</div>
+						</div>
+						<input type="hidden" asp-for="ProductId"/>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="categoryname">Ürün adı</label>
+								<input type="text" class="form-control" asp-for="ProductName" id="categoryname" placeholder="Adı">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="categoryprice">Ürün fiyatı</label>
+								<input type="text" class="form-control" asp-for="Price" id="categoryprice" placeholder="Adı">
+							</div>
+						</div><div class="card-body">
+							<div class="form-group">
+								<label for="url">Ürün görseli</label>
+								<input type="text" class="form-control" asp-for="ImageUrl" id="url" placeholder="Adı">
+							</div>
+						</div><div class="card-body">
+							<div class="form-group">
+								<label for="categoryprice">Ürün kategorisi</label>
+								@Html.DropDownListFor(x=>x.CategoryId,(List<SelectListItem>)ViewBag.v,new {@class="form-control"})
+							</div>
+						</div><div class="card-body">
+							<div class="form-group">
+								<label for="desc">Ürün açıklaması</label>
+								<input type="text" class="form-control" asp-for="Description" id="desc" placeholder="Adı">
+							</div>
+						</div>
+						<div class="card-action">
+							<button class="btn btn-primary">Kaydet</button>
+
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

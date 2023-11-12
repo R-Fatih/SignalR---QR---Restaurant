@@ -38,7 +38,7 @@ namespace SignalRApi.Controllers
             });
             return Ok("SocialMedia has been added succesfully.");
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteSocialMedia(int id)
         {
             var value = _socialMediaService.TGetById(id);
@@ -61,7 +61,7 @@ namespace SignalRApi.Controllers
             });
             return Ok("SocialMedia has been updated succesfully.");
         }
-        [HttpGet("GetSocialMedia")]
+        [HttpGet("{id}")]
         public IActionResult GetSocialMedia(int id)
         {
             var value = _socialMediaService.TGetById(id);

@@ -1,0 +1,49 @@
+﻿@{
+	ViewData["Title"] = "UpdateTestimonial";
+	Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+@model SignalRWebUI.Dtos.TestimonialDtos.UpdateTestimonialDto
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Öne çıkan İşlemleri</h4>
+		<div class="row">
+			<div class="col-md-12">
+
+				<form method="post">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Yeni yorum</div>
+						</div>
+						<input type="hidden" asp-for="TestimonialId"/>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="1b">Adı</label>
+								<input type="text" class="form-control" asp-for="Name" id="1b" placeholder="Adı">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="2b">Ünvan</label>
+								<input type="text" class="form-control" asp-for="Title" id="2b" placeholder="Adı">
+							</div>
+						</div>	<div class="card-body">
+							<div class="form-group">
+								<label for="3b">Url</label>
+								<input type="text" class="form-control" asp-for="ImageUrl" id="3b" placeholder="Adı">
+							</div>
+						</div>	<div class="card-body">
+							<div class="form-group">
+								<label for="1a">Yorum</label>
+								<input type="text" class="form-control" asp-for="Comment" id="1a" placeholder="Adı">
+							</div>
+						</div>
+
+						<div class="card-action">
+							<button class="btn btn-primary">Kaydet</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

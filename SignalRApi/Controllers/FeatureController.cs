@@ -41,7 +41,7 @@ namespace SignalRApi.Controllers
             });
             return Ok("Feature has been added succesfully.");
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteFeature(int id)
         {
             var value = _featureService.TGetById(id);
@@ -66,7 +66,7 @@ namespace SignalRApi.Controllers
             });
             return Ok("Feature has been updated succesfully.");
         }
-        [HttpGet("GetFeature")]
+        [HttpGet("{id}")]
         public IActionResult GetFeature(int id)
         {
             var value = _featureService.TGetById(id);

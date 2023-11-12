@@ -4,7 +4,7 @@ using SignalR.DataAccessLayer.Concrete;
 
 namespace SignalRApi.Hubs
 {
-	public class SignalRHub:Hub
+	public class SignalRHub : Hub
 	{
 		private readonly ICategoryService _categoryService;
 		private readonly IProductService _productService;
@@ -22,8 +22,8 @@ namespace SignalRApi.Hubs
 
 		public async Task SendStatistics()
 		{
-		var value=	_categoryService.TCategoryCount();
-			await Clients.All.SendAsync("ReceiveCategoryCount",value);
+			var value = _categoryService.TCategoryCount();
+			await Clients.All.SendAsync("ReceiveCategoryCount", value);
 			var value2 = _productService.TProductCount();
 			await Clients.All.SendAsync("ReceiveProductCount", value2);
 			var value3 = _categoryService.TActiveCategoryCount();
@@ -64,6 +64,16 @@ namespace SignalRApi.Hubs
 			var value16 = _menuTableService.TMenuTableCount();
 			await Clients.All.SendAsync("ReceiveMenuTableCount", value16);
 		}
-		
+		public async Task SendProgress()
+		{
+			var value = _moneyCaseService.TTotalMoneyCaseAmount();
+			await Clients.All.SendAsync("ReceiveTotalMoneyCaseAmount", value.ToString("0.00") + "₺");
+
+			var value2 = _orderService.TActiveOrderCount();
+			await Clients.All.SendAsync("ReceiveActiveOrderCount", value2);
+
+			var value3 = _menuTableService.TMenuTableCount();
+			await Clients.All.SendAsync("ReceiveMenuTableCount", value3);
+		}
 	}
 }

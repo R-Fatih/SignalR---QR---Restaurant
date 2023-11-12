@@ -61,5 +61,11 @@ using (var context=new SignalRContext())
 using var context=new SignalRContext();
             return context.Products.Average(a => a.Price);
 		}
+
+		public decimal ProductAvgPriceByHamburger()
+		{
+			using var ctx = new SignalRContext();
+			return ctx.Products.Where(a => a.CategoryId == (ctx.Categories.Where(b => b.CategoryName == "Hamburger").Select(c => c.CategoryId).FirstOrDefault())).Average(d => d.Price);
+		}
 	}
 }

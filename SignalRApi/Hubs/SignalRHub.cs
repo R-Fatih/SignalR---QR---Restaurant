@@ -83,7 +83,7 @@ namespace SignalRApi.Hubs
 		public async Task GetBookingList()
 		{
 			var values = _bookingService.TGetListAll();
-			await Clients.All.SendAsync("ReceiveBookingList",values);
+			await Clients.All.SendAsync("ReceiveBookingList", values);
 		}
 		public async Task SendNotification()
 		{
@@ -92,6 +92,12 @@ namespace SignalRApi.Hubs
 
 			var values2 = _notificationService.TGetAllNotificationsByFalse();
 			await Clients.All.SendAsync("ReceiveGetAllNotificationsByFalse", values2);
+
+		}
+		public async Task GetMenuTableStatus()
+		{
+			var values = _menuTableService.TGetListAll();
+			await Clients.All.SendAsync("ReceiveMenuTableStatus", values);
 
 		}
 	}

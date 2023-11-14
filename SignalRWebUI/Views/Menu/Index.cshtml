@@ -134,13 +134,19 @@
             var id = value;
             $.ajax({
                 type:'post',
-                data:{item:id},
+                data: { item: id },
+                url:'/Menu/AddBasket/'+id,
+
                 contentType:'json',
                 success:function(){
-                    swal("Good job!"+id, "You clicked the button!", "success");
+                    swal("Good job!"+id, "Ürün sepete eklendi!", "success");
                 }
             })
         }
+
+
+
+
     </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 

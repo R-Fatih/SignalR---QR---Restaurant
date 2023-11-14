@@ -1,4 +1,5 @@
-﻿using SignalR.DataAccessLayer.Abstract;
+﻿using Microsoft.EntityFrameworkCore;
+using SignalR.DataAccessLayer.Abstract;
 using SignalR.DataAccessLayer.Concrete;
 using SignalR.DataAccessLayer.Repositories;
 using SignalR.EntityLayer.Entities;
@@ -19,7 +20,7 @@ namespace SignalR.DataAccessLayer.EntityFramework
         public List<Basket> GetBasketByMenuTableNumber(int id)
         {
             using var context = new SignalRContext();
-           return context.Baskets.Where(a => a.MenuTableId == id).ToList();
+           return context.Baskets.Include(a=>a.Product).Where(a => a.MenuTableId == id).ToList();
         }
     }
 }

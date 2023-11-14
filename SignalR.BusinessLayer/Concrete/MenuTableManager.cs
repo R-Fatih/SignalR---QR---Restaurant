@@ -25,27 +25,27 @@ namespace SignalR.BusinessLayer.Concrete
 
 		void IGenericService<MenuTable>.TAdd(MenuTable entity)
 		{
-			throw new NotImplementedException();
+			_menuTableDal.Add(entity);
 		}
 
 		void IGenericService<MenuTable>.TDelete(MenuTable entity)
 		{
-			throw new NotImplementedException();
+			_menuTableDal.Delete(entity);
 		}
 
 		MenuTable IGenericService<MenuTable>.TGetById(int id)
 		{
-			throw new NotImplementedException();
+			return _menuTableDal.GetById(id);
 		}
 
 		List<MenuTable> IGenericService<MenuTable>.TGetListAll()
 		{
-			throw new NotImplementedException();
+			return _menuTableDal.GetListAll();
 		}
 
 		void IGenericService<MenuTable>.TUpdate(MenuTable entity)
 		{
-			throw new NotImplementedException();
+			_menuTableDal.Update(entity);
 		}
 	}
 }

@@ -1,0 +1,51 @@
+﻿@model SignalRWebUI.Dtos.IdentityDtos.UserEditDto
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Porfil İşlemleri</h4>
+		<div class="row">
+			<div class="col-md-12">
+
+				<form method="post">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Şifre güncelelem</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="categoryname">Adınız</label>
+								<input type="text" class="form-control" asp-for="Name" id="categoryname" placeholder="Adı">
+							</div>
+							<div class="form-group">
+								<label for="categoryname">Soyadınız</label>
+								<input type="text" class="form-control" asp-for="Surname" id="categoryname" placeholder="Adı">
+							</div>
+							<div class="form-group">
+								<label for="categoryname">Mail</label>
+								<input type="text" class="form-control" asp-for="Mail" id="categoryname" placeholder="Adı">
+							</div>
+							<div class="form-group">
+								<label for="categoryname">Kullanıcı adınız</label>
+								<input type="text" class="form-control" asp-for="Username" id="categoryname" placeholder="Adı">
+							</div>
+							<div class="form-group">
+								<label for="categoryname">Şifreniz</label>
+								<input type="password" class="form-control" asp-for="Password" id="categoryname" placeholder="Adı">
+							</div>
+							<div class="card-action">
+								<button class="btn btn-primary">Kaydet</button>
+
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+

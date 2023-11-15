@@ -1,6 +1,7 @@
 ﻿@{
 	ViewData["Title"] = "Index";
 	Layout = "~/Views/AdminLayout/Index.cshtml";
+	int count = 0;
 }
 @model List<SignalRWebUI.Dtos.ProductDtos.ResultProductDto>
 
@@ -31,10 +32,10 @@
 							<tbody>
 								@foreach (var item in Model)
 								{
-
+									count++;
 
 									<tr>
-										<td>@item.ProductId</td>
+										<th>@count</th>
 										<td>@item.ProductName</td>
 										<td>@item.Price</td>
 										<td>@item.CategoryName</td>

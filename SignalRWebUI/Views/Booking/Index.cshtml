@@ -44,6 +44,8 @@
 												<th scope="col">Durum</th>
 												<th scope="col">Güncelle</th>
 												<th scope="col">Sil</th>
+												<th scope="col">Onayla</th>
+												<th scope="col">İptal et</th>
 											</tr>
 										</thead>
 										<tbody>`
@@ -55,9 +57,11 @@
 									<td>${item.mail}</td>
 		                            <td>${item.date}</td>
 									<td>${item.personCount}</td>
-									<td>${"Rezervasyon alındı"}</td>
+												<td>${item.description}</td>
 												<td><a href="/Booking/UpdateBooking/${item.bookingId}" class="btn btn-outline-success">Güncelle</a></td>
-																<td><a href="/Booking/DeleteBooking/${item.bookingId}" class="btn btn-outline-danger">Sil</a></td>
+												<td><a href="/Booking/DeleteBooking/${item.bookingId}" class="btn btn-outline-danger">Sil</a></td>
+												<td><a href="/Booking/BookingStatusApproved/${item.bookingId}" class="btn btn-outline-info">Onayla</a></td>
+												<td><a href="/Booking/BookingStatusCancelled/${item.bookingId}" class="btn btn-outline-dark">İptal et</a></td>
 																			</tr>`
 					});
 					tablehtml += "</tbody></table>"

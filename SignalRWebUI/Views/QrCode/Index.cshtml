@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<div class="content">
+    <div class="container-fluid">
+        <form method="post">
+    <input type="text" name="value" />
+    <input type="submit" name="Qr Kod oluştur" class="btn btn-warning" />
+</form>
+    </div>
+</div>
+
+@if (ViewBag.QrCodeImage != null)
+{
+    <img src="@ViewBag.QrCodeImage" style="width:400px;height:400px;">
+}

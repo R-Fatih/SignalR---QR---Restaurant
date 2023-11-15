@@ -80,5 +80,11 @@ namespace SignalRApi.Controllers
 			_discountService.TChangeStatusToTrue(id);
 			return Ok("Discount has been updated to true succesfully.");
 		}
+		[HttpGet("GetListByStatusTrue")]
+		public IActionResult GetListByStatusTrue()
+		{
+			
+			return Ok(_discountService.TGetListByStatusTrue());
+		}
 	}
 }

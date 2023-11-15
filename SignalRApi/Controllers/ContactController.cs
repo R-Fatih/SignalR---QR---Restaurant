@@ -33,8 +33,11 @@ namespace SignalRApi.Controllers
                FooterDescription = createContactDto.FooterDescription,
                Location = createContactDto.Location,
                Mail=createContactDto.Mail,
-               Phone = createContactDto.Phone,
-
+               Phone = createContactDto.Phone
+               ,FooterTitle = createContactDto.FooterTitle,
+               OpenHours = createContactDto.OpenHours,
+               OpenDaysDescription = createContactDto.OpenDaysDescription,
+               OpenDays=createContactDto.OpenDays
             });
             return Ok("Contact has been added succesfully.");
         }
@@ -55,8 +58,12 @@ namespace SignalRApi.Controllers
                 ContactId = updateContactDto.ContactId,
                 Phone = updateContactDto.Phone,Mail=updateContactDto.Mail,
                 Location = updateContactDto.Location,
-                FooterDescription=updateContactDto.FooterDescription
-            });
+                FooterDescription=updateContactDto.FooterDescription,
+				FooterTitle = updateContactDto.FooterTitle,
+                OpenDays = updateContactDto.OpenDays,
+                OpenDaysDescription = updateContactDto.OpenDaysDescription,
+                OpenHours=updateContactDto.OpenHours,
+			});
             return Ok("Contact has been updated succesfully.");
         }
         [HttpGet("{id}")]

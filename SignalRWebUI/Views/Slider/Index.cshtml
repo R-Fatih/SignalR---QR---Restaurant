@@ -2,7 +2,7 @@
 	ViewData["Title"] = "Index";
 	Layout = "~/Views/AdminLayout/Index.cshtml";
 }
-@model List<SignalRWebUI.Dtos.FeatureDtos.ResultFeatureDto>
+@model List<SignalRWebUI.Dtos.SliderDtos.ResultSliderDto>
 
 <div class="content">
 	<div class="container-fluid">
@@ -36,20 +36,20 @@
 
 
 									<tr>
-										<td>@item.FeatureId</td>
+										<td>@item.SliderId</td>
 										<td>@item.Title1</td>
 										<td>@item.Title2</td>
 										<td>@item.Title3</td>
 										<td>@item.Description1</td>
 										<td>@item.Description2</td>
 										<td>@item.Description3</td>
-										<td><a href="/Feature/UpdateFeature/@item.FeatureId" class="btn btn-outline-success">Güncelle</a></td>
-										<td><a href="/Feature/DeleteFeature/@item.FeatureId" class="btn btn-outline-danger">Sil</a></td>
+										<td><a href="/Slider/UpdateSlider/@item.SliderId" class="btn btn-outline-success">Güncelle</a></td>
+										<td><a href="/Slider/DeleteSlider/@item.SliderId" class="btn btn-outline-danger">Sil</a></td>
 									</tr>
 								}
 							</tbody>
 						</table>
-						<a href="/Feature/CreateFeature" class="btn btn-outline-primary">Yeni öne çıkan</a>
+						<a href="/Slider/CreateSlider" class="btn btn-outline-primary">Yeni öne çıkan</a>
 					</div>
 				</div>
 

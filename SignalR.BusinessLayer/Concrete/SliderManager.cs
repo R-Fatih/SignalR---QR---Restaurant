@@ -9,38 +9,40 @@ using System.Threading.Tasks;
 
 namespace SignalR.BusinessLayer.Concrete
 {
-    public class SliderManager : ISliderService
-    {
-        private readonly ISliderDal _sliderDal;
+	public class SliderManager : ISliderService
+	{
 
-        public SliderManager(ISliderDal sliderDal)
-        {
-            _sliderDal = sliderDal;
-        }
+		private readonly ISliderDal _sliderDal;
 
-        public void TAdd(Slider entity)
-        {
-            throw new NotImplementedException();
-        }
+		public SliderManager(ISliderDal sliderDal)
+		{
+			_sliderDal = sliderDal;
+		}
 
-        public void TDelete(Slider entity)
-        {
-            throw new NotImplementedException();
-        }
+		public void TAdd(Slider entity)
+		{
+			_sliderDal.Add(entity);
+		}
 
-        public Slider TGetById(int id)
-        {
-            throw new NotImplementedException();
-        }
+		public void TDelete(Slider entity)
+		{
+			_sliderDal.Delete(entity);
+		}
 
-        public List<Slider> TGetListAll()
-        {
-            return _sliderDal.GetListAll();
-        }
+		public Slider TGetById(int id)
+		{
+			return _sliderDal.GetById(id);
 
-        public void TUpdate(Slider entity)
-        {
-            throw new NotImplementedException();
-        }
-    }
+		}
+
+		public List<Slider> TGetListAll()
+		{
+			return _sliderDal.GetListAll();
+		}
+
+		public void TUpdate(Slider entity)
+		{
+			_sliderDal.Update(entity);
+		}
+	}
 }

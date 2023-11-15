@@ -1,8 +1,8 @@
 ﻿@{
-	ViewData["Title"] = "UpdateFeature";
+	ViewData["Title"] = "CreateSlider";
 	Layout = "~/Views/AdminLayout/Index.cshtml";
 }
-@model SignalRWebUI.Dtos.FeatureDtos.UpdateFeatureDto
+@model SignalRWebUI.Dtos.SliderDtos.CreateSliderDto
 <div class="content">
 	<div class="container-fluid">
 		<h4 class="page-title">Kategori İşlemleri</h4>
@@ -12,9 +12,8 @@
 				<form method="post">
 					<div class="card">
 						<div class="card-header">
-							<div class="card-title">öne çıkan güncelleme</div>
+							<div class="card-title">Yeni öne çıkan ekleme</div>
 						</div>
-						<input type="hidden" asp-for="FeatureId"/>
 						<div class="card-body">
 							<div class="form-group">
 								<label for="1b">1. başlık</label>
